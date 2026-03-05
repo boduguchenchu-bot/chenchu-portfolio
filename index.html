@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chenchu | Developer</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<style>
+
+/* gradient background */
+
+body{
+background:linear-gradient(120deg,#020617,#020617,#0f172a,#020617);
+background-size:400% 400%;
+animation:gradient 12s ease infinite;
+}
+
+@keyframes gradient{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+/* cursor */
+
+#cursor{
+width:18px;
+height:18px;
+border:2px solid cyan;
+border-radius:50%;
+position:fixed;
+pointer-events:none;
+transform:translate(-50%,-50%);
+}
+
+/* floating image */
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-20px)}
+100%{transform:translateY(0)}
+}
+
+.float{
+animation:float 6s ease-in-out infinite;
+}
+
+</style>
+
+</head>
+
+<body class="text-white">
+
+<div id="cursor"></div>
+
+<!-- NAVBAR -->
+
+<nav class="fixed w-full backdrop-blur-md bg-black/40">
+
+<div class="max-w-6xl mx-auto flex justify-between p-6">
+
+<h1 class="text-2xl font-bold text-cyan-400">Chenchu.dev</h1>
+
+<ul class="flex gap-8">
+
+<li><a href="index.html" class="hover:text-cyan-400">Home</a></li>
+<li><a href="about.html" class="hover:text-cyan-400">About</a></li>
+<li><a href="projects.html" class="hover:text-cyan-400">Projects</a></li>
+<li><a href="contact.html" class="hover:text-cyan-400">Contact</a></li>
+
+</ul>
+
+
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="min-h-screen flex items-center justify-center px-10">
+
+<div class="grid md:grid-cols-2 gap-10 items-center max-w-6xl">
+
+<!-- TEXT -->
+
+<div>
+
+<h1 class="text-6xl font-bold">
+
+Hi I'm  
+<span class="text-cyan-400">Chenchu</span>
+
+</h1>
+
+<div class="mt-6 text-2xl text-gray-300">
+
+<span id="typing"></span>
+
+</div>
+
+<p class="mt-6 text-gray-400">
+
+I design and build modern websites using MERN Stack,
+creating interactive and responsive web experiences.
+
+</p>
+
+<div class="flex gap-6 mt-8">
+
+<a href="projects.html">
+
+<button class="px-8 py-3 bg-cyan-500 rounded-xl hover:bg-cyan-700 transition hover:scale-110">
+View Projects
+</button>
+
+</a>
+
+<a href="contact.html">
+
+<button class="px-8 py-3 border border-cyan-400 rounded-xl hover:bg-cyan-400 hover:text-black transition hover:scale-110">
+Hire Me
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+<!-- PROFILE IMAGE -->
+
+<div class="flex justify-center">
+
+<img 
+src="img/chandujpeg.jpeg"
+class="w-56 md:w-64 lg:w-72 rounded-full border-4 border-cyan-400 
+shadow-[0_0_35px_cyan] hover:scale-105 transition duration-500 float">
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+/* typing */
+
+var typed = new Typed("#typing",{
+strings:[
+"MERN Stack Developer",
+"Frontend Developer",
+"UI Designer"
+],
+typeSpeed:60,
+backSpeed:40,
+loop:true
+});
+
+/* dark mode */
+
+function toggleMode(){
+document.body.classList.toggle("bg-white");
+document.body.classList.toggle("text-black");
+}
+
+/* cursor */
+
+const cursor = document.getElementById("cursor");
+
+document.addEventListener("mousemove",e=>{
+cursor.style.left = e.pageX+"px";
+cursor.style.top = e.pageY+"px";
+});
+
+</script>
+
+</body>
+</html>
